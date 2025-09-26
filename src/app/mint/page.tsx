@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import Link from "next/link";
 
 import SiteFooter from "@/components/SiteFooter";
 
@@ -16,7 +17,7 @@ const editionCards = [
 export default function MintPage() {
   return (
     <main className="relative flex min-h-screen flex-col bg-[#050505] text-[#FAFAFA]">
-      <section className="relative flex-1 overflow-hidden px-6 pb-24 pt-32 sm:px-10 lg:px-12">
+      <section className="relative overflow-hidden px-6 pb-32 pt-24 sm:px-10 lg:px-12">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-x-[-20%] top-[-180px] h-[520px] bg-[radial-gradient(circle_at_top,rgba(107,53,232,0.22),transparent_75%)]"
@@ -59,13 +60,16 @@ export default function MintPage() {
                   </h2>
                   <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#F5EFFE]/85">
                     Mint your pass to access curated courses, live workshops, and a network of builders pushing the next
-                    era of Web3. Only 1,000 passes availableâ€”each unlocks perpetual learning and community access.
+                    era of Web3. Only 1,000 passes available—each unlocks perpetual learning and community access.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  <button className="rounded-full bg-[#FAFAFA] px-5 py-2 text-sm font-semibold text-[#050505] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_45px_-25px_rgba(0,0,0,0.45)]">
+                  <Link
+                    href="/collection"
+                    className="rounded-full bg-[#FAFAFA] px-5 py-2 text-sm font-semibold text-[#050505] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_45px_-25px_rgba(0,0,0,0.45)]"
+                  >
                     View Collection
-                  </button>
+                  </Link>
                   <button className="rounded-full border border-[#FAFAFA]/40 px-5 py-2 text-sm font-semibold text-[#FAFAFA] transition-transform duration-200 hover:-translate-y-0.5 hover:border-[#FAFAFA]/80">
                     Learn More
                   </button>
@@ -98,7 +102,7 @@ export default function MintPage() {
                       <div className="flex items-center justify-between">
                         <span>{card.label}</span>
                         <span className="flex items-center gap-2 text-xs text-[#0F8F4F]">
-                          â— {card.status}
+                          ● {card.status}
                         </span>
                       </div>
                     </div>
